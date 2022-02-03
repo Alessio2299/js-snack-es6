@@ -1,40 +1,50 @@
 let arrBikes = [
   {
-    nome : "Bianchi",
-    peso : 12
+    name : "Bianchi",
+    weight : 12
   },
   {
-    nome : "Legnano",
-    peso : 15
+    name : "Legnano",
+    weight : 15
   },
   {
-    nome : "Cinelli",
-    peso : 11
+    name : "Cinelli",
+    weight : 11
   },
   {
-    nome : "Pinarello",
-    peso : 17
+    name : "Pinarello",
+    weight : 17
   },
   {
-    nome : "Olmo",
-    peso : 14
+    name : "Olmo",
+    weight : 14
   },
 ]
 
+let currentI = lowerWeight(arrBikes);
 
-function pesoMinore (bici){
-  let minore = 0;
-  if(bici[0].peso < bici[1].peso){
-    minore = bici[0].peso;
-  } else if (bici[0].peso == bici[1].peso){
-    minore = bici[0].peso;
+// Stampo a schermo con il destructuring e template literal il nome e il peso della bici piu leggera
+let {name, weight} = arrBikes[currentI];
+alert(`La bici con il peso minore è: ${name} che pesa ${weight}kg.`)
+
+function lowerWeight (bikes){
+  let currentI = 0;
+  let lower = 0;
+  if(bikes[0].weight < bikes[1].weight){
+    lower = bikes[0].weight;
+  } else if (bikes[0].weight == bikes[1].weight){
+    lower = bikes[0].weight;
   } else{
-    minore = bici[1].peso;
+    lower = bikes[1].weight;
+    currentI = 1;
   }
-  for(let i = 2; i < bici.length; i++){
-    if(minore > bici[i].peso){
-      minore = bici[i].peso;
+  for(let i = 2; i < bikes.length; i++){
+    if(lower > bikes[i].weight){
+      lower = bikes[i].weight;
+      currentI = i;
     }
   }
-  return minore
+  return currentI
 }
+
+
