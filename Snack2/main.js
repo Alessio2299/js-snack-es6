@@ -42,13 +42,11 @@ for(let i = 0; i < teams.length; i++){
   teams[i].fouls = randomNumber(0,64);
 }
 
-
-let {nameTeam, fouls} = teams
-
-
-console.log(nameTeam)
-console.log(fouls)
-
+console.log(teams)
+for(let i = 0; i < teams.length; i++){
+  let {nameTeam, fouls} = teams[i]
+  alert(`La squadra: ${nameTeam} ha subito un totale di ${fouls} falli`)
+}
 
 
 function randomNumber (max, min){
