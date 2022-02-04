@@ -40,10 +40,6 @@ let teams = [
 for(let i = 0; i < teams.length; i++){
   teams[i].points = randomNumber(0,64);
   teams[i].fouls = randomNumber(0,64);
-}
-
-console.log(teams)
-for(let i = 0; i < teams.length; i++){
   let {nameTeam, fouls} = teams[i]
   alert(`La squadra: ${nameTeam} ha subito un totale di ${fouls} falli`)
 }
